@@ -1,0 +1,27 @@
+To resolve this issue, several approaches exist. One is to make the paragraph selector more specific by combining selectors.
+
+```css
+.container {
+  background-color: blue;
+}
+
+.container p {
+  background-color: red;
+}
+```
+
+This ensures the `p` element will now be styled with the red background since `.container p` is more specific than `.container`.
+
+Another approach is to use the `!important` flag, however, this is generally discouraged due to potential maintenance issues:
+
+```css
+.container {
+  background-color: blue;
+}
+
+p {
+  background-color: red !important;
+}
+```
+
+This forces the red background on the `p` element, overriding the `.container` rule.  However, overusing `!important` makes CSS harder to maintain and debug, so this should be considered a last resort.
