@@ -1,0 +1,15 @@
+The following CSS code snippet demonstrates a common issue related to specificity and the cascade.  The intention is to style the `.container` element with a blue background and then override this for the `.container p` element with a red background. However, the p element's style isn't applied because of specificity issues.
+
+```css
+.container {
+  background-color: blue;
+}
+
+p {
+  background-color: red;
+}
+```
+
+This produces a blue background for both the container and the paragraph.  The `.container p` selector is more specific than just `p`, but not more specific than `.container`.
+
+The problem stems from the fact that CSS specificity rules determine which style is applied when multiple conflicting styles are present.  In this case, the `.container` selector has higher specificity than the `p` selector.  This isn't immediately obvious, as the `p` element is nested. The solution requires more specific styling.
